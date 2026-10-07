@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07161b" />
+  <meta name="description" content="Impermeabilize em Leme/SP — soluções em impermeabilização para proteger seu imóvel contra infiltrações, umidade e desgaste." />
+  <title>Impermeabilize | Soluções em Impermeabilização — Leme/SP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#061216;
+      --bg2:#0a1b21;
+      --panel:#0d242c;
+      --panel2:#102c35;
+      --text:#f4fbfd;
+      --muted:#a7bcc3;
+      --brand:#00a5ca;
+      --brand2:#31d0ee;
+      --line:rgba(255,255,255,.09);
+      --shadow:0 30px 80px rgba(0,0,0,.36);
+      --radius:26px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .noise{position:fixed;inset:0;pointer-events:none;opacity:.025;z-index:99;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E")}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .topbar{position:fixed;top:16px;left:0;right:0;z-index:50}
+    nav{height:72px;border:1px solid var(--line);background:rgba(5,18,22,.72);backdrop-filter:blur(18px);border-radius:22px;display:flex;align-items:center;justify-content:space-between;padding:0 18px 0 14px;box-shadow:0 10px 35px rgba(0,0,0,.16)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.02em}
+    .brand img{width:34px;height:44px;object-fit:contain}
+    .brand span{font-family:Montserrat,sans-serif;font-size:18px}
+    .navlinks{display:flex;gap:26px;color:var(--muted);font-size:14px;font-weight:700}
+    .navlinks a:hover{color:white}
+    .navcta,.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#001b22;font-weight:800;border-radius:14px;padding:13px 18px;box-shadow:0 14px 32px rgba(0,165,202,.22)}
+    .hero{min-height:100vh;display:grid;align-items:center;position:relative;padding:150px 0 90px;background:
+      radial-gradient(circle at 73% 30%,rgba(0,165,202,.19),transparent 28%),
+      radial-gradient(circle at 20% 20%,rgba(49,208,238,.08),transparent 24%),
+      linear-gradient(180deg,#07161b 0%,#061216 100%)}
+    .hero:after{content:"";position:absolute;inset:auto -15% -180px -15%;height:350px;background:linear-gradient(180deg,transparent,#0a1b21 70%);filter:blur(20px)}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:72px;align-items:center;position:relative;z-index:2}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 11px;border:1px solid rgba(49,208,238,.22);background:rgba(0,165,202,.08);border-radius:999px;color:#bdf5ff;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .pulse{width:8px;height:8px;border-radius:50%;background:var(--brand2);box-shadow:0 0 0 6px rgba(49,208,238,.08)}
+    h1{font-family:Montserrat,sans-serif;font-size:clamp(48px,7vw,90px);line-height:.94;letter-spacing:-.055em;margin:25px 0 24px;max-width:840px}
+    h1 .accent{color:var(--brand2)}
+    .lead{max-width:690px;color:#bad0d7;font-size:clamp(18px,2vw,21px);line-height:1.65;margin:0 0 34px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary{padding:16px 22px;border-radius:16px}
+    .btn-secondary{display:inline-flex;align-items:center;gap:9px;padding:16px 20px;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:16px;font-weight:800;color:#e6f4f7}
+    .meta{display:flex;gap:26px;margin-top:38px;flex-wrap:wrap}
+    .meta-item{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px}
+    .meta-icon{width:34px;height:34px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;color:var(--brand2)}
+    .visual{position:relative;min-height:580px;display:grid;place-items:center}
+    .drop-glow{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(0,165,202,.24),rgba(0,165,202,.02) 56%,transparent 70%);filter:blur(6px);animation:floatGlow 7s ease-in-out infinite}
+    .main-drop{width:min(76%,360px);filter:drop-shadow(0 28px 80px rgba(0,165,202,.28));animation:float 6s ease-in-out infinite}
+    .glass-card{position:absolute;border:1px solid var(--line);background:rgba(13,36,44,.72);backdrop-filter:blur(18px);border-radius:18px;box-shadow:var(--shadow)}
+    .card-a{left:0;bottom:76px;padding:16px 18px;width:220px}.card-b{right:-10px;top:90px;padding:16px;width:200px}
+    .mini-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#82a3ad;font-weight:800}.mini-title{margin-top:6px;font-weight:800;font-size:15px}.mini-line{height:6px;border-radius:6px;background:rgba(255,255,255,.08);margin-top:11px;overflow:hidden}.mini-line i{display:block;height:100%;width:82%;background:linear-gradient(90deg,var(--brand),var(--brand2))}
+    section{position:relative;z-index:3}
+    .section{padding:100px 0}
+    .section.alt{background:var(--bg2)}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:46px}
+    .kicker{color:var(--brand2);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.16em}
+    h2{font-family:Montserrat,sans-serif;font-size:clamp(34px,5vw,56px);letter-spacing:-.04em;line-height:1.03;margin:10px 0 0;max-width:720px}
+    .section-copy{max-width:440px;color:var(--muted);line-height:1.7}
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .service{position:relative;min-height:285px;padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));overflow:hidden;transition:.25s ease}
+    .service:hover{transform:translateY(-6px);border-color:rgba(49,208,238,.26);background:linear-gradient(180deg,rgba(0,165,202,.12),rgba(255,255,255,.02))}
+    .service .num{font-size:12px;color:#6f9099;font-weight:800}.service .icon{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;background:rgba(0,165,202,.12);color:var(--brand2);font-size:25px;margin:28px 0 38px}.service h3{font-size:20px;margin:0 0 10px}.service p{color:var(--muted);line-height:1.6;font-size:14px;margin:0}.service:after{content:"";position:absolute;width:120px;height:120px;border:1px solid rgba(49,208,238,.08);border-radius:50%;right:-48px;bottom:-42px}
+    .problem-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:28px;align-items:stretch}
+    .problem-visual{min-height:520px;border-radius:32px;border:1px solid var(--line);background:linear-gradient(150deg,#102b34,#07171c);position:relative;overflow:hidden;padding:34px;box-shadow:var(--shadow)}
+    .wall{position:absolute;inset:86px 40px 40px;background:linear-gradient(180deg,#d7e4e7 0 56%,#c2d0d4 56%);border-radius:14px;overflow:hidden}
+    .stain{position:absolute;right:13%;top:23%;width:170px;height:150px;border-radius:50% 42% 53% 30%;background:radial-gradient(circle at 38% 36%,rgba(77,98,101,.72),rgba(31,53,58,.45) 50%,transparent 73%);filter:blur(4px)}
+    .crack{position:absolute;left:24%;top:18%;height:210px;width:3px;background:#71888d;transform:rotate(12deg);box-shadow:17px 52px 0 -1px #71888d}
+    .water{position:absolute;right:25%;top:38%;width:9px;height:24px;border-radius:80% 80% 90% 90%;background:#00a5ca;box-shadow:30px 25px 0 #00a5ca,-21px 54px 0 #00a5ca}
+    .problem-badge{position:absolute;left:30px;bottom:28px;background:#07171c;color:white;border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-size:13px;font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,.24)}
+    .problem-copy{padding:34px 24px 34px 24px;display:flex;flex-direction:column;justify-content:center}
+    .ticks{display:grid;gap:12px;margin-top:28px}.tick{display:flex;gap:12px;align-items:flex-start;color:#d9e9ed}.check{flex:0 0 auto;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:rgba(0,165,202,.12);color:var(--brand2);font-size:13px;font-weight:900}.tick span{color:var(--muted);line-height:1.55;font-size:15px}.tick b{color:white}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:30px;border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:24px}.step strong{display:block;color:var(--brand2);font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px}.step h3{font-size:20px;margin:0 0 10px}.step p{color:var(--muted);line-height:1.65;margin:0;font-size:14px}
+    .cta-panel{position:relative;overflow:hidden;border:1px solid rgba(49,208,238,.15);border-radius:34px;padding:58px;background:linear-gradient(135deg,#0c2a33 0%,#07181d 70%);box-shadow:var(--shadow)}
+    .cta-panel:before{content:"";position:absolute;width:390px;height:390px;border-radius:50%;background:radial-gradient(circle,rgba(49,208,238,.16),transparent 68%);right:-110px;top:-180px}
+    .cta-panel h2{max-width:760px}.cta-panel p{max-width:630px;color:#b9cfd5;line-height:1.7;font-size:17px}.cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    footer{padding:35px 0 44px;border-top:1px solid var(--line);background:#051014;color:#79959d;font-size:13px}.footer-grid{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.foot-brand{display:flex;align-items:center;gap:10px;color:#d9eef3;font-weight:800}.foot-brand img{width:22px;height:30px}.legal{max-width:660px;text-align:right;line-height:1.5}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-18px) rotate(1deg)}}
+    @keyframes floatGlow{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+    @media(max-width:960px){.navlinks{display:none}.hero-grid,.problem-grid{grid-template-columns:1fr}.visual{min-height:470px}.services{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.section-head{display:block}.section-copy{margin-top:18px}.hero{padding-top:130px}.card-b{right:0}}
+    @media(max-width:620px){.wrap{width:min(var(--max),calc(100% - 24px))}.topbar{top:8px}.brand span{font-size:15px}.navcta{padding:11px 13px;font-size:12px}.hero{padding-bottom:60px}.hero-grid{gap:28px}h1{font-size:50px}.lead{font-size:17px}.visual{min-height:390px}.main-drop{width:58%}.drop-glow{width:300px;height:300px}.card-a{left:0;bottom:32px;width:190px}.card-b{right:0;top:32px;width:170px}.services{grid-template-columns:1fr}.section{padding:74px 0}.problem-visual{min-height:390px}.wall{inset:72px 22px 24px}.cta-panel{padding:34px 24px}.footer-grid{align-items:flex-start}.legal{text-align:left}.meta{gap:14px}.hero-actions>*{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <div class="topbar">
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="#inicio" aria-label="Impermeabilize">
+          <img src="assets/gota.svg" alt="Símbolo da Impermeabilize" />
+          <span>IMPERMEABILIZE</span>
+        </a>
+        <div class="navlinks">
+          <a href="#servicos">Soluções</a>
+          <a href="#processo">Como funciona</a>
+          <a href="#contato">Contato</a>
+        </div>
+        <a class="navcta" href="https://www.instagram.com/impermeabilize.leme/" target="_blank" rel="noopener">Falar agora ↗</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="pulse"></span> Soluções em impermeabilização · Leme/SP</div>
+          <h1>Água no lugar certo.<br><span class="accent">Longe da sua obra.</span></h1>
+          <p class="lead">Proteção contra infiltração, umidade e desgaste com uma apresentação técnica, clara e profissional — do diagnóstico à solução.</p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="https://www.instagram.com/impermeabilize.leme/" target="_blank" rel="noopener">Solicitar orçamento <span>↗</span></a>
+            <a class="btn-secondary" href="#servicos">Conhecer soluções ↓</a>
+          </div>
+          <div class="meta">
+            <div class="meta-item"><span class="meta-icon">⌂</span> Atendimento em Leme e região</div>
+            <div class="meta-item"><span class="meta-icon">◉</span> Residencial, comercial e obras</div>
+          </div>
+        </div>
+
+        <div class="visual" aria-hidden="true">
+          <div class="drop-glow"></div>
+          <img class="main-drop" src="assets/gota.svg" alt="" />
+          <div class="glass-card card-a">
+            <div class="mini-label">Proteção</div>
+            <div class="mini-title">Barreira contra umidade</div>
+            <div class="mini-line"><i></i></div>
+          </div>
+          <div class="glass-card card-b">
+            <div class="mini-label">Objetivo</div>
+            <div class="mini-title">Preservar estrutura e acabamento</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="servicos">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Onde a impermeabilização faz diferença</div>
+            <h2>Proteção pensada para os pontos mais vulneráveis.</h2>
+          </div>
+          <p class="section-copy">Uma landing page forte precisa explicar rapidamente o problema, mostrar domínio técnico e levar o cliente direto para o orçamento.</p>
+        </div>
+
+        <div class="services">
+          <article class="service reveal"><span class="num">01</span><div class="icon">▰</div><h3>Lajes e coberturas</h3><p>Soluções para reduzir a ação da água em superfícies expostas à chuva e intempéries.</p></article>
+          <article class="service reveal"><span class="num">02</span><div class="icon">◫</div><h3>Paredes e fachadas</h3><p>Proteção de superfícies sujeitas à umidade, fissuras e infiltrações recorrentes.</p></article>
+          <article class="service reveal"><span class="num">03</span><div class="icon">⌗</div><h3>Áreas molhadas</h3><p>Tratamento preventivo para regiões com contato frequente com água e vapor.</p></article>
+          <article class="service reveal"><span class="num">04</span><div class="icon">✓</div><h3>Prevenção e manutenção</h3><p>Avaliação e cuidado antes que pequenos sinais de umidade se tornem grandes reparos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap problem-grid">
+        <div class="problem-visual reveal" aria-hidden="true">
+          <div class="kicker">O sinal aparece antes do prejuízo</div>
+          <div class="wall"><div class="stain"></div><div class="crack"></div><div class="water"></div></div>
+          <div class="problem-badge">Manchas · bolhas · mofo · fissuras · goteiras</div>
+        </div>
+        <div class="problem-copy reveal">
+          <div class="kicker">Diagnóstico primeiro</div>
+          <h2>Infiltração não é só uma mancha na parede.</h2>
+          <p class="section-copy" style="max-width:620px;margin-top:18px">Quando a origem da água não é tratada, o problema pode voltar e comprometer pintura, revestimento e partes da construção. A solução começa entendendo de onde a água vem.</p>
+          <div class="ticks">
+            <div class="tick"><span class="check">✓</span><span><b>Identificar a origem</b> antes de escolher o sistema de impermeabilização.</span></div>
+            <div class="tick"><span class="check">✓</span><span><b>Preparar a superfície</b> para favorecer aderência e desempenho.</span></div>
+            <div class="tick"><span class="check">✓</span><span><b>Aplicar a solução adequada</b> à exposição, uso e condição do local.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="processo">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="kicker">Processo simples</div><h2>Do primeiro contato à solução.</h2></div>
+          <p class="section-copy">A jornada foi desenhada para tirar atrito do orçamento e transformar o Instagram em um canal que realmente converte.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal"><strong>Etapa 01</strong><h3>Conte o problema</h3><p>Envie fotos, vídeos e uma breve descrição do que está acontecendo no imóvel ou na obra.</p></article>
+          <article class="step reveal"><strong>Etapa 02</strong><h3>Avaliação</h3><p>O caso é analisado para entender a origem provável e definir o próximo passo.</p></article>
+          <article class="step reveal"><strong>Etapa 03</strong><h3>Orçamento e execução</h3><p>Com o escopo alinhado, o cliente recebe a proposta e combina a execução do serviço.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="wrap">
+        <div class="cta-panel reveal">
+          <div class="kicker">Impermeabilize · Leme/SP</div>
+          <h2>Seu cliente não deveria precisar procurar outro lugar para entender o que vocês fazem.</h2>
+          <p>Uma página como esta centraliza apresentação, serviços, confiança e contato em um único link — pronta para bio do Instagram, anúncios, Google e WhatsApp.</p>
+          <div class="cta-actions">
+            <a class="btn-primary" href="https://www.instagram.com/impermeabilize.leme/" target="_blank" rel="noopener">Abrir Instagram ↗</a>
+            <a class="btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Rua+Getulio+Vargas+515+Leme+SP" target="_blank" rel="noopener">Ver localização ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="foot-brand"><img src="assets/gota.svg" alt="" /> IMPERMEABILIZE</div>
+      <div class="legal">Protótipo de apresentação desenvolvido com base em informações públicas. Textos, serviços, contatos e área de atendimento devem ser confirmados pela empresa antes de uso oficial.</div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach((entry)=>{
+        if(entry.isIntersecting){ entry.target.classList.add('show'); observer.unobserve(entry.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
